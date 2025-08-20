@@ -1,0 +1,350 @@
+#wpfooter {
+    display: none !important;
+}
+#wpbody-content {
+    padding-bottom: 0 !important;
+}
+#wpcontent {
+    height: 100%;
+    padding-left: 12px !important;
+}
+
+.ai-sql-explorer {
+    background: #1a1a1a;
+    min-height: 100vh;
+    color: #e0e0e0;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+    padding: 0;
+    margin: 0 -20px 0 -10px;
+}
+
+.container {
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 2rem 2rem 0 2rem;
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+}
+
+.header {
+    text-align: center;
+    margin-bottom: 2rem;
+    padding-bottom: 1rem;
+    border-bottom: 1px solid #333;
+    flex-shrink: 0;
+}
+
+.header h1 {
+    font-size: 2.2rem;
+    margin: 0 0 0.5rem;
+    color: #fff;
+    font-weight: 600;
+}
+
+.header p {
+    color: #999;
+    font-size: 1rem;
+    margin: 0;
+}
+
+.chat-container {
+    flex: 1;
+    background: #2a2a2a;
+    border-radius: 8px;
+    border: 1px solid #444;
+    padding: 1rem;
+    overflow-y: auto;
+    margin-bottom: 0;
+    min-height: 0;
+}
+
+.message {
+    display: flex;
+    margin-bottom: 1.5rem;
+    align-items: flex-start;
+    gap: 0.8rem;
+}
+
+.welcome-message {
+    display: flex;
+    margin-bottom: 1.5rem;
+    align-items: flex-start;
+    gap: 0.8rem;
+}
+
+.user-message {
+    flex-direction: row-reverse;
+}
+
+.avatar {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.2rem;
+    flex-shrink: 0;
+}
+
+.ai-avatar {
+    background: #4a4a4a;
+}
+
+.user-avatar {
+    background: #2d5aa0;
+}
+
+.message-content {
+    background: #333;
+    padding: 1rem;
+    border-radius: 12px;
+    max-width: 70%;
+    word-wrap: break-word;
+}
+
+.user-message .message-content {
+    background: #2d5aa0;
+}
+
+.message-content p {
+    margin: 0 0 0.5rem 0;
+}
+
+.message-content p:last-child {
+    margin-bottom: 0;
+}
+
+.message-content ul {
+    margin: 0.5rem 0;
+    padding-left: 1.2rem;
+}
+
+.message-content li {
+    margin-bottom: 0.3rem;
+}
+
+.query-box {
+    position: sticky;
+    bottom: 0;
+    background: #1a1a1a;
+    padding: 1rem 0;
+    border-top: 1px solid #333;
+    z-index: 100;
+    flex-shrink: 0;
+}
+
+#user-query {
+    width: 100%;
+    min-height: 80px;
+    background: #2a2a2a;
+    border: 1px solid #444;
+    border-radius: 8px;
+    padding: 1rem;
+    color: #e0e0e0;
+    font-size: 0.95rem;
+    line-height: 1.4;
+    resize: vertical;
+    transition: border-color 0.2s ease;
+}
+
+#user-query:focus {
+    outline: none;
+    border-color: #555;
+    background: #2d2d2d;
+}
+
+#user-query::placeholder {
+    color: #777;
+}
+
+.send-btn {
+    position: absolute;
+    bottom: 12px;
+    right: 12px;
+    background: #4a4a4a;
+    color: #fff;
+    border: none;
+    border-radius: 6px;
+    padding: 0.6rem 1.2rem;
+    font-size: 0.9rem;
+    font-weight: 500;
+    cursor: pointer;
+    transition: background-color 0.2s ease;
+    min-width: 80px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+}
+
+.send-btn:hover:not(:disabled) {
+    background: #555;
+}
+
+.send-btn:disabled {
+    opacity: 0.7;
+    cursor: not-allowed;
+}
+
+.confirmation-box {
+    position: sticky;
+    bottom: 0;
+    background: #1a1a1a;
+    border-top: 2px solid #ff6b6b;
+    padding: 1.5rem 0;
+    z-index: 101;
+    flex-shrink: 0;
+}
+
+.confirmation-content {
+    background: #2a2a2a;
+    border: 1px solid #ff6b6b;
+    border-radius: 8px;
+    padding: 1.5rem;
+}
+
+.confirmation-content p {
+    margin-bottom: 1rem;
+    color: #ff9999;
+    line-height: 1.5;
+}
+
+.confirmation-buttons {
+    display: flex;
+    gap: 1rem;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+#confirmation-input {
+    flex: 1;
+    min-width: 200px;
+    background: #333;
+    border: 1px solid #555;
+    border-radius: 6px;
+    padding: 0.8rem;
+    color: #e0e0e0;
+    font-size: 0.9rem;
+}
+
+#confirmation-input:focus {
+    outline: none;
+    border-color: #666;
+}
+
+.confirm-btn {
+    background: #d63384;
+    color: white;
+    border: none;
+    border-radius: 6px;
+    padding: 0.8rem 1.5rem;
+    font-size: 0.9rem;
+    cursor: pointer;
+    transition: background-color 0.2s ease;
+}
+
+.confirm-btn:hover {
+    background: #b02a5b;
+}
+
+.cancel-btn {
+    background: #6c757d;
+    color: white;
+    border: none;
+    border-radius: 6px;
+    padding: 0.8rem 1.5rem;
+    font-size: 0.9rem;
+    cursor: pointer;
+    transition: background-color 0.2s ease;
+}
+
+.cancel-btn:hover {
+    background: #5a6268;
+}
+
+.spinner {
+    width: 12px;
+    height: 12px;
+    border: 2px solid rgba(255, 255, 255, 0.3);
+    border-top: 2px solid #fff;
+    border-radius: 50%;
+    animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+
+.table-wrapper {
+    background: #333;
+    border-radius: 6px;
+    overflow: hidden;
+    margin-top: 1rem;
+    max-height: 300px;
+    overflow-y: auto;
+}
+
+.results-table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 0.85rem;
+}
+
+.results-table th {
+    background: #404040;
+    color: #fff;
+    padding: 0.6rem 0.8rem;
+    text-align: left;
+    font-weight: 500;
+    position: sticky;
+    top: 0;
+}
+
+.results-table td {
+    padding: 0.6rem 0.8rem;
+    border-top: 1px solid #444;
+    color: #e0e0e0;
+    max-width: 200px;
+    word-wrap: break-word;
+}
+
+.results-table tr:hover {
+    background: #3a3a3a;
+}
+
+@media (max-width: 768px) {
+    .container {
+        padding: 1rem 1rem 0 1rem;
+    }
+    
+    .header h1 {
+        font-size: 1.8rem;
+    }
+    
+    .query-box {
+        padding: 1rem;
+    }
+    
+    .send-btn {
+        position: static;
+        width: 100%;
+        margin-top: 1rem;
+        justify-content: center;
+    }
+    
+    .confirmation-box {
+        padding: 1rem;
+    }
+    
+    .confirmation-buttons {
+        flex-direction: column;
+    }
+    
+    #confirmation-input {
+        min-width: 100%;
+    }
+}
+

@@ -1,15 +1,5 @@
 <?php
-/*
-Plugin Name: WP AI SQL Explorer Pro - Friendly Chatbot
-Description: Friendly AI chatbot that can talk with users and handle database queries with safety features
-Version: 3.3
-Author: Enhanced by Claude
-*/
 
-// Prevent direct access
-if (!defined('ABSPATH')) {
-    exit;
-}
 
 // Add menu in WP Admin
 add_action('admin_menu', function() {
@@ -35,7 +25,7 @@ add_action('admin_enqueue_scripts', function($hook) {
         'wp-ai-sql-explorer-pro-style',
         plugin_dir_url(__FILE__) . 'assets/css/ai-sql-explorer.css',
         [],
-        '3.3'
+        '3.2'
     );
 
     // Enqueue JavaScript
@@ -43,7 +33,7 @@ add_action('admin_enqueue_scripts', function($hook) {
         'wp-ai-sql-explorer-pro-script',
         plugin_dir_url(__FILE__) . 'assets/js/ai-sql-explorer.js',
         ['jquery'],
-        '3.3',
+        '3.2',
         true
     );
 
@@ -53,8 +43,7 @@ add_action('admin_enqueue_scripts', function($hook) {
         'wpAiSqlExplorer',
         [
             'ajax_url' => admin_url('admin-ajax.php'),
-            'nonce' => wp_create_nonce('wp_ai_sql_explorer_nonce'),
-            'api_key' => 'AIzaSyDUDc7jyAqHEyZ_UKoxMPByIXXZboYZewI'
+            'nonce' => wp_create_nonce('wp_ai_sql_explorer_nonce')
         ]
     );
 });
@@ -419,12 +408,7 @@ function wp_ai_sql_explorer_pro_page() {
             </div>
 
             <div class="query-box">
-                <div class="query-input-container">
-                    <textarea id="user-query" placeholder="Type your message here... Ask me about your database or just say hello! 😊"></textarea>
-                    <button id="voice-btn" class="voice-btn" title="Voice Input">
-                        <span class="mic-icon">🎤</span>
-                    </button>
-                </div>
+                <textarea id="user-query" placeholder="Type your message here... Ask me about your database or just say hello! 😊"></textarea>
                 <button id="send-btn" class="send-btn">
                     <span class="btn-text">Send</span>
                     <span class="btn-loading" style="display: none;">
@@ -432,14 +416,6 @@ function wp_ai_sql_explorer_pro_page() {
                         Thinking...
                     </span>
                 </button>
-            </div>
-
-            <div class="voice-status" id="voice-status" style="display: none;">
-                <div class="voice-status-content">
-                    <span class="voice-status-icon">🎤</span>
-                    <span class="voice-status-text">Listening...</span>
-                    <button id="voice-stop-btn" class="voice-stop-btn">Stop</button>
-                </div>
             </div>
 
             <div class="confirmation-box" id="confirmation-box" style="display: none;">
@@ -457,5 +433,3 @@ function wp_ai_sql_explorer_pro_page() {
     <?php
 }
 ?>
-
-
